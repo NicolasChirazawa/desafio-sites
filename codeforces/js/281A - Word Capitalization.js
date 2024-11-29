@@ -1,3 +1,5 @@
+//281A - Word Capitalization (https://codeforces.com/contest/281/problem/A)
+
 /*
 Capitalization is writing a word with its first letter as a capital letter. Your task is to capitalize the given word.
 
