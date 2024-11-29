@@ -1,3 +1,5 @@
+//45A - Codecraft III (https://codeforces.com/contest/45/problem/A)
+
 /*
 Today Vasya visited a widely known site and learned that the continuation of his favourite game Codecraft II will appear after exactly k months. He looked at the calendar and learned that at the moment is the month number s. Vasya immediately got interested in what month Codecraft III will appear. Help him understand that.
 
