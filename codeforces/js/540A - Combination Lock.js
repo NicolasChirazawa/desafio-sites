@@ -1,3 +1,5 @@
+//540A - Combination Lock (https://codeforces.com/contest/540/problem/A)
+
 /*
 Capitalization is writing a word with its first letter as a capital letter. Your task is to capitalize the given word.
 
