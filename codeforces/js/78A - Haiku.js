@@ -1,3 +1,5 @@
+//78A - Haiku (https://codeforces.com/contest/78/problem/A)
+
 /*
 A word or a sentence in some language is called a pangram if all the characters of the alphabet of this language appear in it at least once. Pangrams are often used to demonstrate fonts in printing or test the output devices.
 
