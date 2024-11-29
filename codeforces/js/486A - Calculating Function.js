@@ -1,3 +1,5 @@
+//486A - Calculating Function (https://codeforces.com/contest/486/problem/A)
+
 /*
 For a positive integer n let's define a function f:
 
