@@ -1,3 +1,5 @@
+//41A - Translations (https://codeforces.com/contest/41/problem/A)
+
 /*
 Shapur was an extremely gifted student. He was great at everything including Combinatorics, Algebra, Number Theory, Geometry, Calculus, etc. He was not only smart but extraordinarily fast! He could manage to sum 1018 numbers in a single second.
 
