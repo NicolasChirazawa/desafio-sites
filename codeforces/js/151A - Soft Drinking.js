@@ -1,3 +1,5 @@
+//151A - Soft Drinking (https://codeforces.com/contest/151/problem/A)
+
 /*
 Petya loves lucky numbers. We all know that lucky numbers are the positive integers whose decimal representations contain only the lucky digits 4 and 7. For example, numbers 47, 744, 4 are lucky and 5, 17, 467 are not.
 
