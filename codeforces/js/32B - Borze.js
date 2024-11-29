@@ -1,15 +1,16 @@
-/*
-A triangular number is the number of dots in an equilateral triangle uniformly filled with dots. For example, three dots can be arranged in a triangle; thus three is a triangular number. The n-th triangular number is the number of dots in a triangle with n dots on a side. . You can learn more about these numbers from Wikipedia (http://en.wikipedia.org/wiki/Triangular_number).
+//32B - Borze (https://codeforces.com/contest/32/problem/B)
 
-Your task is to find out if a given integer is a triangular number.
+/*
+
+Ternary numeric notation is quite popular in Berland. To telegraph the ternary number the Borze alphabet is used. Digit 0 is transmitted as «.», 1 as «-.» and 2 as «--». You are to decode the Borze code, i.e. to find out the ternary number given its representation in Borze alphabet.
 
 Input
-The first line contains the single number n (1 ≤ n ≤ 500) — the given integer.
+The first line contains a number in Borze code. The length of the string is between 1 and 200 characters. It's guaranteed that the given string is a valid Borze code of some ternary number (this number can have leading zeroes).
 
 Output
-If the given integer is a triangular number output YES, otherwise output NO
+Output the decoded ternary number. It can have leading zeroes.
 
-/* Common Template Starts */
+ /* Common Template Starts */
  
 process.stdin.resume();
 process.stdin.setEncoding("utf-8");
@@ -37,24 +38,27 @@ function readline() {
 }
 /* Common Template Ends */
  
-function numTriang(n){ 
-    let calculo = (n *(n + 1))/2;
-    return calculo;
-}
- 
 function main() {
  
     const input = readline();
-    let numero = 0;
+    let resposta = '';
  
-    for(let i = 1; i <= input; i++){
-        numero = numTriang(i);
-        if(numero == input){
-            console.log('YES');
-            break;
-        } else if(numero > input){
-            console.log('NO')
+    for(let i = 0; i < input.length; i++){
+        if(input[i] == '-') {
+            if(input[i + 1] == '-'){
+                i++;
+                resposta = resposta + '2';
+            } else {
+                i++;
+                resposta = resposta + '1';
+            }
+        } else {
+            resposta = resposta + '0';
+        }
+ 
+        if(input[i] == -1){
             break;
         }
     }
+    console.log(resposta);
 }
