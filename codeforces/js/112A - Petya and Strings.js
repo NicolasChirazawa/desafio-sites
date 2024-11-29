@@ -1,3 +1,5 @@
+//112A - Petya and Strings (https://codeforces.com/contest/112/problem/A)
+
 /*
 Scrooge McDuck keeps his most treasured savings in a home safe with a combination lock. Each time he wants to put there the treasures that he's earned fair and square, he has to open the lock.
 
