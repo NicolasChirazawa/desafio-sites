@@ -1,3 +1,5 @@
+//510A - Fox And Snake (https://codeforces.com/contest/510/problem/A)
+
 /*
 Fox Ciel starts to learn programming. The first task is drawing a fox! However, that turns out to be too hard for a beginner, so she decides to draw a snake instead.
 
