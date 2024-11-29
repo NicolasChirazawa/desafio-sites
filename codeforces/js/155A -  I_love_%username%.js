@@ -1,3 +1,5 @@
+//155A - I_love_%username% (https://codeforces.com/contest/155/problem/A)
+
 /*
 Vasya adores sport programming. He can't write programs but he loves to watch the contests' progress. Vasya even has a favorite coder and Vasya pays special attention to him.
 
