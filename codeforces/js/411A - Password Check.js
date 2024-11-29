@@ -1,3 +1,5 @@
+//411A - Password Check (https://codeforces.com/contest/411/problem/A) 
+
 /*
 You have probably registered on Internet sites many times. And each time you should enter your invented password. Usually the registration form automatically checks the password's crypt resistance. If the user's password isn't complex enough, a message is displayed. Today your task is to implement such an automatic check.
 
