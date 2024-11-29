@@ -1,3 +1,5 @@
+//22A - Second Order Statics (https://codeforces.com/contest/22/problem/A)
+
 /*
 Once Bob needed to find the second order statistics of a sequence of integer numbers. Lets choose each number from the sequence exactly once and sort them. The value on the second position is the second order statistics of the given sequence. In other words it is the smallest element strictly greater than the minimum. Help Bob solve this problem.
 
