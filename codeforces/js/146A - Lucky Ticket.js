@@ -1,3 +1,5 @@
+//146A - Lucky Ticket (https://codeforces.com/contest/146/problem/A)
+
 /*
 There is a game called "I Wanna Be the Guy", consisting of n levels. Little X and his friend Little Y are addicted to the game. Each of them wants to pass the whole game.
 
