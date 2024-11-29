@@ -1,4 +1,7 @@
-/*The classic programming language of Bitland is Bit++. This language is so peculiar and complicated.
+//282A - Bit++ (https://codeforces.com/contest/282/problem/A)
+
+/*
+The classic programming language of Bitland is Bit++. This language is so peculiar and complicated.
 
 The language is that peculiar as it has exactly one variable, called x. Also, there are two operations:
 
