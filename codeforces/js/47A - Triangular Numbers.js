@@ -1,3 +1,5 @@
+//47A - Triangular Numbers (https://codeforces.com/contest/47/problem/A)
+
 /*
 A triangular number is the number of dots in an equilateral triangle uniformly filled with dots. For example, three dots can be arranged in a triangle; thus three is a triangular number. The n-th triangular number is the number of dots in a triangle with n dots on a side. . You can learn more about these numbers from Wikipedia (http://en.wikipedia.org/wiki/Triangular_number).
 
