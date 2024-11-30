@@ -1,3 +1,5 @@
+//32A - Reconnaissance (https://codeforces.com/problemset/problem/32/A)
+
 /*
 Two players are playing a game. First each of them writes an integer from 1 to 6, and then a dice is thrown. The player whose written number got closer to the number on the dice wins. If both payers have the same difference, it's a draw.
 
