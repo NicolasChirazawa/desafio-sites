@@ -21,3 +21,5 @@ As soluções que desenvolvi estão sendo postadas juntas das data que foram tes
 • Primeiro problema 800: 158A - Next Round 'https://codeforces.com/contest/158/problem/A' (11/2024);
 
 • Primeiro problema 900: 6A - Triangle 'https://codeforces.com/contest/6/problem/A' (11/2024);
+
+• Primeiro problema 1000: 1A - Theatre Square 'https://codeforces.com/contest/1/problem/A' (12/2024);
