@@ -1,4 +1,4 @@
-//177A2 - Good Matrix Elements (https://codeforces.com/contest/177/problem/A2)
+//177A1 - Good Matrix Elements (https://codeforces.com/contest/177/problem/A1)
 
 /*
 The Smart Beaver from ABBYY got hooked on square matrices. Now he is busy studying an n × n size matrix, where n is odd. The Smart Beaver considers the following matrix elements good:
