@@ -1,19 +1,21 @@
-//94A - Restoring Password
+//133A - HQ9+ (https://codeforces.com/contest/133/problem/A)
 
 /*
-Igor K. always used to trust his favorite Kashpirovsky Antivirus. That is why he didn't hesitate to download the link one of his groupmates sent him via QIP Infinium. The link was said to contain "some real funny stuff about swine influenza". The antivirus had no objections and Igor K. run the flash application he had downloaded. Immediately his QIP Infinium said: "invalid login/password".
+HQ9+ is a joke programming language which has only four one-character instructions:
 
-Igor K. entered the ISQ from his additional account and looked at the info of his main one. His name and surname changed to "H1N1" and "Infected" correspondingly, and the "Additional Information" field contained a strange-looking binary code 80 characters in length, consisting of zeroes and ones. "I've been hacked" — thought Igor K. and run the Internet Exploiter browser to quickly type his favourite search engine's address.
+"H" prints "Hello, World!",
+"Q" prints the source code of the program itself,
+"9" prints the lyrics of "99 Bottles of Beer" song,
+"+" increments the value stored in the internal accumulator.
+Instructions "H" and "Q" are case-sensitive and must be uppercase. The characters of the program which are not instructions are ignored.
 
-Soon he learned that it really was a virus that changed ISQ users' passwords. Fortunately, he soon found out that the binary code was actually the encrypted password where each group of 10 characters stood for one decimal digit. Accordingly, the original password consisted of 8 decimal digits.
-
-Help Igor K. restore his ISQ account by the encrypted password and encryption specification.
+You are given a program written in HQ9+. You have to figure out whether executing this program will produce any output.
 
 Input
-The input data contains 11 lines. The first line represents the binary code 80 characters in length. That is the code written in Igor K.'s ISQ account's info. Next 10 lines contain pairwise distinct binary codes 10 characters in length, corresponding to numbers 0, 1, ..., 9.
+The input will consist of a single line p which will give a program in HQ9+. String p will contain between 1 and 100 characters, inclusive. ASCII-code of each character of p will be between 33 (exclamation mark) and 126 (tilde), inclusive.
 
 Output
-Print one line containing 8 characters — The password to Igor K.'s ISQ account. It is guaranteed that the solution exists.
+Output "YES", if executing the program will produce any output, and "NO" otherwise
 
 /* Common Template Starts */
  
@@ -45,27 +47,13 @@ function readline() {
  
 function main() {
     const input = readline();
-    let numeros = [];
-    let senha = [];
-    let resposta = [];
+    let resposta = 'NO';
  
-    // Popular numeros
-    for(let i = 0; i < 10; i++){
-        numeros[i] = readline();
- 
-        // Quebrar senha em grupos de 10
-        if (i < 8) {
-            senha[i] = input.slice((i * 10), ((i * 10) + 10));
+    for(let i = 0; i < input.length; i++){
+        if(input[i] == 'H' || input[i] == 'Q' || input[i] == '9'){
+            resposta = 'YES';
+            break;
         }
     }
- 
-    for(let k = 0; k < senha.length; k++){
-        for(let j = 0; j < numeros.length; j++){
-            if(senha[k] == numeros[j]){
-                resposta[k] = numeros.indexOf(numeros[j]);
-                break;
-            }
-        }
-    }
-    console.log(resposta.join(''));
+    console.log(resposta)
 }
