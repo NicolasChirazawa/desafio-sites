@@ -1,17 +1,17 @@
-//Beautiful Matrix - 263A (https://codeforces.com/contest/263/problem/A)
+//Drinks - 200B (https://codeforces.com/contest/200/problem/B)
 
 /*
-You've got a 5 × 5 matrix, consisting of 24 zeroes and a single number one. Let's index the matrix rows by numbers from 1 to 5 from top to bottom, let's index the matrix columns by numbers from 1 to 5 from left to right. In one move, you are allowed to apply one of the two following transformations to the matrix:
+Little Vasya loves orange juice very much. That's why any food and drink in his kitchen necessarily contains orange juice. There are n drinks in his fridge, the volume fraction of orange juice in the i-th drink equals pi percent.
 
-Swap two neighboring matrix rows, that is, rows with indexes i and i + 1 for some integer i (1 ≤ i < 5).
-Swap two neighboring matrix columns, that is, columns with indexes j and j + 1 for some integer j (1 ≤ j < 5).
-You think that a matrix looks beautiful, if the single number one of the matrix is located in its middle (in the cell that is on the intersection of the third row and the third column). Count the minimum number of moves needed to make the matrix beautiful.
+One day Vasya decided to make himself an orange cocktail. He took equal proportions of each of the n drinks and mixed them. Then he wondered, how much orange juice the cocktail has.
+
+Find the volume fraction of orange juice in the final drink.
 
 Input
-The input consists of five lines, each line contains five integers: the j-th integer in the i-th line of the input represents the element of the matrix that is located on the intersection of the i-th row and the j-th column. It is guaranteed that the matrix consists of 24 zeroes and a single number one.
+The first input line contains a single integer n (1 ≤ n ≤ 100) — the number of orange-containing drinks in Vasya's fridge. The second line contains n integers pi (0 ≤ pi ≤ 100) — the volume fraction of orange juice in the i-th drink, in percent. The numbers are separated by a space.
 
 Output
-Print a single integer — the minimum number of moves needed to make the matrix beautiful.
+Print the volume fraction in percent of orange juice in Vasya's cocktail. The answer will be considered correct if the absolute or relative error does not exceed 10  - 4.
 
 /* Common Template Starts */
  
@@ -42,18 +42,12 @@ function readline() {
 /* Common Template Ends */
  
 function main() {
-    const matriz = [];
-    let posicao = [];
+    const input = readline();
+    let drinks = readline().split(' ').map((elemento) => Number(elemento));
+    let resultado = 0;
  
-    for(let i = 0; i < 5; i++){
-        matriz[i] = readline().split(' ').join('');
-        
-        if(matriz[i] != '00000'){
-            posicao[0] = i;
-            matriz[i].split('');
-            posicao[1] = matriz[i].indexOf('1');
-        }
+    for(let i = 0; i < input; i++){
+        resultado += drinks[i];
     }
-    //Posição central
-    console.log(Math.abs(posicao[0] - 2) + Math.abs(posicao[1] - 2));
+    console.log(resultado/input)
 }
