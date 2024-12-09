@@ -1,23 +1,26 @@
-//131A - cAPS lOCK (https://codeforces.com/contest/131/problem/A)
+//177A2 - Good Matrix Elements (https://codeforces.com/contest/177/problem/A2)
 
 /*
-wHAT DO WE NEED cAPS LOCK FOR?
+The Smart Beaver from ABBYY got hooked on square matrices. Now he is busy studying an n × n size matrix, where n is odd. The Smart Beaver considers the following matrix elements good:
 
-Caps lock is a computer keyboard key. Pressing it sets an input mode in which typed letters are capital by default. If it is pressed by accident, it leads to accidents like the one we had in the first passage.
-
-Let's consider that a word has been typed with the Caps lock key accidentally switched on, if:
-
-either it only contains uppercase letters;
-or all letters except for the first one are uppercase.
-In this case we should automatically change the case of all letters. For example, the case of the letters that form words "hELLO", "HTTP", "z" should be changed.
-
-Write a program that applies the rule mentioned above. If the rule cannot be applied, the program should leave the word unchanged.
+Elements of the main diagonal.
+Elements of the secondary diagonal.
+Elements of the "middle" row — the row which has exactly  rows above it and the same number of rows below it.
+Elements of the "middle" column — the column that has exactly  columns to the left of it and the same number of columns to the right of it.
+The figure shows a 5 × 5 matrix. The good elements are marked with green.
+Help the Smart Beaver count the sum of good elements of the given matrix.
 
 Input
-The first line of the input data contains a word consisting of uppercase and lowercase Latin letters. The word's length is from 1 to 100 characters, inclusive.
+The first line of input data contains a single odd integer n. Each of the next n lines contains n integers aij (0 ≤ aij ≤ 100) separated by single spaces — the elements of the given matrix.
 
+The input limitations for getting 30 points are:
+
+1 ≤ n ≤ 5
+The input limitations for getting 100 points are:
+
+1 ≤ n ≤ 101
 Output
-Print the result of the given word's processing.
+Print a single integer — the sum of good matrix elements.
 
 /* Common Template Starts */
  
@@ -48,26 +51,31 @@ function readline() {
 /* Common Template Ends */
  
 function main() {
-    let input = readline();
-    let resposta = [];
+    const input = Number(readline());
+    let matriz = [];
+    let contador = 0;
  
-    //O ASCII parte dos maiúsculos aos minúsculos, 'A' é 65, 'a' é 97, dessa forma, a condição ocorre sobre o '97'.
-    if(input[0].charCodeAt(0) >= 97){
-        resposta[0] = String.fromCharCode(input[0].charCodeAt() - 32);
-    } else { resposta[0] = String.fromCharCode(input[0].charCodeAt() + 32) }
+    //Populando matriz
+    for(let i = 0; i < input; i++){
+        matriz[i] = readline().split(' ').map((element) => Number(element));
+        // matriz[i] = matriz[i].split(' ').map((element) => Number(element))
  
-    for(let i = 1; i < input.length; i++){
-        if(input[i].charCodeAt(0) < 97){
-            resposta[i] = String.fromCharCode(input[i].charCodeAt() + 32); 
-        } else {
-            break;
-        }
+        // Diagonal principal
+        contador += matriz[i][i];
+ 
+        // Diagonal secundária
+        contador += matriz[i][input - i - 1];
+ 
+        // Elementos da coluna do meio
+        contador += matriz[i][(input - 1) / 2];
+ 
+        // Elementos da linha do meio
+        if(i == (input - 1)/ 2){
+            for(let j = 0; j < input; j++){
+                contador += matriz[i][j];
+            }
+        } 
     }
- 
-    //A primeira letra é opcional, ser ou não maiúscula
-    if(resposta.length > (input.length - 1)){
-        console.log(resposta.join(''));
-    } else {
-        console.log(input);
-    }
+    //Repete 3 vezes o número do meio
+    console.log(contador - (matriz[(input - 1) / 2][(input - 1) / 2] * 3))
 }
