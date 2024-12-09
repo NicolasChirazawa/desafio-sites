@@ -1,16 +1,19 @@
-//318A - Even Odds (https://codeforces.com/contest/318/problem/A) 
+//94A - Restoring Password (https://codeforces.com/contest/94/problem/A)
 
 /*
-Being a nonconformist, Volodya is displeased with the current state of things, particularly with the order of natural numbers (natural number is positive integer number). He is determined to rearrange them. But there are too many natural numbers, so Volodya decided to start with the first n. He writes down the following sequence of numbers: firstly all odd integers from 1 to n (in ascending order), then all even integers from 1 to n (also in ascending order). Help our hero to find out which number will stand at the position number k.
+Igor K. always used to trust his favorite Kashpirovsky Antivirus. That is why he didn't hesitate to download the link one of his groupmates sent him via QIP Infinium. The link was said to contain "some real funny stuff about swine influenza". The antivirus had no objections and Igor K. run the flash application he had downloaded. Immediately his QIP Infinium said: "invalid login/password".
+
+Igor K. entered the ISQ from his additional account and looked at the info of his main one. His name and surname changed to "H1N1" and "Infected" correspondingly, and the "Additional Information" field contained a strange-looking binary code 80 characters in length, consisting of zeroes and ones. "I've been hacked" — thought Igor K. and run the Internet Exploiter browser to quickly type his favourite search engine's address.
+
+Soon he learned that it really was a virus that changed ISQ users' passwords. Fortunately, he soon found out that the binary code was actually the encrypted password where each group of 10 characters stood for one decimal digit. Accordingly, the original password consisted of 8 decimal digits.
+
+Help Igor K. restore his ISQ account by the encrypted password and encryption specification.
 
 Input
-The only line of input contains integers n and k (1 ≤ k ≤ n ≤ 1012).
-
-Please, do not use the %lld specifier to read or write 64-bit integers in C++. It is preferred to use the cin, cout streams or the %I64d specifier.
+The input data contains 11 lines. The first line represents the binary code 80 characters in length. That is the code written in Igor K.'s ISQ account's info. Next 10 lines contain pairwise distinct binary codes 10 characters in length, corresponding to numbers 0, 1, ..., 9.
 
 Output
-Print the number that will stand at the position number k after Volodya's manipulations.
-
+Print one line containing 8 characters — The password to Igor K.'s ISQ account. It is guaranteed that the solution exists.
 
 /* Common Template Starts */
  
@@ -41,13 +44,28 @@ function readline() {
 /* Common Template Ends */
  
 function main() {
-    const input = readline().split(' ').map((element) => Number(element));
-    
-    // Sempre arredonda para cima pois os ímpares "vêm primeiro" quando se conta
-    if(input[1] <= Math.round(input[0]/2)) { 
-        console.log((input[1] * 2) - 1);
+    const input = readline();
+    let numeros = [];
+    let senha = [];
+    let resposta = [];
+ 
+    // Popular numeros
+    for(let i = 0; i < 10; i++){
+        numeros[i] = readline();
+ 
+        // Quebrar senha em grupos de 10
+        if (i < 8) {
+            senha[i] = input.slice((i * 10), ((i * 10) + 10));
+        }
     }
-    else {
-        console.log((input[1] - Math.round(input[0]/2)) * 2)
+ 
+    for(let k = 0; k < senha.length; k++){
+        for(let j = 0; j < numeros.length; j++){
+            if(senha[k] == numeros[j]){
+                resposta[k] = numeros.indexOf(numeros[j]);
+                break;
+            }
+        }
     }
+    console.log(resposta.join(''));
 }
