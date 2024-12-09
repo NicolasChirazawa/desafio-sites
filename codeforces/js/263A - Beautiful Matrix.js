@@ -1,15 +1,17 @@
-//1A - Theare Square (https://codeforces.com/contest/1/problem/A)
+//263A - Beautiful Matrix (https://codeforces.com/contest/263/problem/A)
 
 /*
-Theatre Square in the capital city of Berland has a rectangular shape with the size n × m meters. On the occasion of the city's anniversary, a decision was taken to pave the Square with square granite flagstones. Each flagstone is of the size a × a.
+You've got a 5 × 5 matrix, consisting of 24 zeroes and a single number one. Let's index the matrix rows by numbers from 1 to 5 from top to bottom, let's index the matrix columns by numbers from 1 to 5 from left to right. In one move, you are allowed to apply one of the two following transformations to the matrix:
 
-What is the least number of flagstones needed to pave the Square? It's allowed to cover the surface larger than the Theatre Square, but the Square has to be covered. It's not allowed to break the flagstones. The sides of flagstones should be parallel to the sides of the Square.
+Swap two neighboring matrix rows, that is, rows with indexes i and i + 1 for some integer i (1 ≤ i < 5).
+Swap two neighboring matrix columns, that is, columns with indexes j and j + 1 for some integer j (1 ≤ j < 5).
+You think that a matrix looks beautiful, if the single number one of the matrix is located in its middle (in the cell that is on the intersection of the third row and the third column). Count the minimum number of moves needed to make the matrix beautiful.
 
 Input
-The input contains three positive integer numbers in the first line: n,  m and a (1 ≤  n, m, a ≤ 109).
+The input consists of five lines, each line contains five integers: the j-th integer in the i-th line of the input represents the element of the matrix that is located on the intersection of the i-th row and the j-th column. It is guaranteed that the matrix consists of 24 zeroes and a single number one.
 
 Output
-Write the needed number of flagstones.
+Print a single integer — the minimum number of moves needed to make the matrix beautiful.
 
 /* Common Template Starts */
  
@@ -40,19 +42,18 @@ function readline() {
 /* Common Template Ends */
  
 function main() {
-    let input = readline().split(' ').map((element) => Number(element));
-    let ladrilhos = [0, 0]
+    const matriz = [];
+    let posicao = [];
  
-    if(input[0] % input[2] > 0){
-        ladrilhos[0] = Math.floor(input[0] / input[2]) + 1; 
-    } else {
-        ladrilhos[0] = input[0]/input[2]
+    for(let i = 0; i < 5; i++){
+        matriz[i] = readline().split(' ').join('');
+        
+        if(matriz[i] != '00000'){
+            posicao[0] = i;
+            matriz[i].split('');
+            posicao[1] = matriz[i].indexOf('1');
+        }
     }
- 
-    if(input[1] % input[2] > 0){
-        ladrilhos[1] = Math.floor(input[1] / input[2]) + 1
-    } else {
-        ladrilhos[1] = input[1] / input[2];
-    }
-console.log(ladrilhos[0] * ladrilhos[1])
+    //Posição central
+    console.log(Math.abs(posicao[0] - 2) + Math.abs(posicao[1] - 2));
 }
