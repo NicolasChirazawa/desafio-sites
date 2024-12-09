@@ -1,17 +1,15 @@
-//200B - Drinks (https://codeforces.com/contest/200/problem/B)
+//318A - Even Odds (https://codeforces.com/contest/318/problem/A)
 
 /*
-Little Vasya loves orange juice very much. That's why any food and drink in his kitchen necessarily contains orange juice. There are n drinks in his fridge, the volume fraction of orange juice in the i-th drink equals pi percent.
-
-One day Vasya decided to make himself an orange cocktail. He took equal proportions of each of the n drinks and mixed them. Then he wondered, how much orange juice the cocktail has.
-
-Find the volume fraction of orange juice in the final drink.
+Being a nonconformist, Volodya is displeased with the current state of things, particularly with the order of natural numbers (natural number is positive integer number). He is determined to rearrange them. But there are too many natural numbers, so Volodya decided to start with the first n. He writes down the following sequence of numbers: firstly all odd integers from 1 to n (in ascending order), then all even integers from 1 to n (also in ascending order). Help our hero to find out which number will stand at the position number k.
 
 Input
-The first input line contains a single integer n (1 ≤ n ≤ 100) — the number of orange-containing drinks in Vasya's fridge. The second line contains n integers pi (0 ≤ pi ≤ 100) — the volume fraction of orange juice in the i-th drink, in percent. The numbers are separated by a space.
+The only line of input contains integers n and k (1 ≤ k ≤ n ≤ 1012).
+
+Please, do not use the %lld specifier to read or write 64-bit integers in C++. It is preferred to use the cin, cout streams or the %I64d specifier.
 
 Output
-Print the volume fraction in percent of orange juice in Vasya's cocktail. The answer will be considered correct if the absolute or relative error does not exceed 10  - 4.
+Print the number that will stand at the position number k after Volodya's manipulations.
 
 /* Common Template Starts */
  
@@ -42,12 +40,13 @@ function readline() {
 /* Common Template Ends */
  
 function main() {
-    const input = readline();
-    let drinks = readline().split(' ').map((elemento) => Number(elemento));
-    let resultado = 0;
- 
-    for(let i = 0; i < input; i++){
-        resultado += drinks[i];
+    const input = readline().split(' ').map((element) => Number(element));
+    
+    // Sempre arredonda para cima pois os ímpares "vêm primeiro" quando se conta
+    if(input[1] <= Math.round(input[0]/2)) { 
+        console.log((input[1] * 2) - 1);
     }
-    console.log(resultado/input)
+    else {
+        console.log((input[1] - Math.round(input[0]/2)) * 2)
+    }
 }
