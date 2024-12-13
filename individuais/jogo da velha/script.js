@@ -15,10 +15,16 @@ function jogada(id, child) {
 
   let valor = testePosicao(coordenada);
 
+  //Lance válido é diferente de 0
   if (valor != 0) {
     quantLance++;
     verLance(child);
     testeResultado();
+  }
+
+  // Empate ou vitória para qualquer um dos lados
+  if(resultado > 0){
+    aparecerBotaoReiniciar(child);
   }
 }
 
@@ -94,6 +100,34 @@ function vitoria_O() {
   frase.textContent = "Vitória do O";
   resultado = 1;
   console.log(jogo);
+}
+
+function aparecerBotaoReiniciar(valor) {
+  
+  const botaoReiniar = document.createElement("button");
+  const titulo = document.createTextNode("Reiniciar");
+  botaoReiniar.appendChild(titulo);
+  document.body.insertBefore(botaoReiniar, frase);
+  botaoReiniar.classList.add("valor");
+
+  
+  botaoReiniar.addEventListener("click", () =>{
+    reinciar(valor);
+  })
+    
+}
+
+function reinciar(teste) {
+  jogo = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  resultado = 0;
+  lance = 1;
+  quantLance = 0;
+
+  frase.textContent = "Mais uma vez";
+
+  for(let i = 0; i < jogo.length; i++){
+    console.log(teste[i]);
+  }
 }
 
 /*
