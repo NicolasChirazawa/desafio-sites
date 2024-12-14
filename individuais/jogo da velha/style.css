@@ -52,7 +52,7 @@ td{
     color: white;
     text-align: center;
 
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 p.teste {
@@ -130,8 +130,10 @@ p.teste {
     }
 }
 
-.valor {
-    margin: 50px auto 0 auto;
+.botaoEstilo {
+   cursor: pointer;
+   
+    margin: 30px auto 0 auto;
     display: block;
 
     font-size: 20px;
