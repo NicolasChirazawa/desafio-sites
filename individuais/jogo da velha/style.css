@@ -19,6 +19,24 @@ main{
     justify-content: space-evenly;
 }
 
+main > div#primeira_parte {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+main > div#segunda_parte {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+main > div#terceira_parte {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+
 /* Mexendo com o CSS da tabela */
 table {
     border-collapse: collapse; /* Junta as bordas */
@@ -48,6 +66,25 @@ td{
 }
 
 /* Finalizado o CSS da tabela */
+
+#contador{
+    background-color: #ffffff;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+div#contador > p {
+    font-weight: bolder;
+    font-size: 20px;
+    color: #317379;
+}
+
 #frase {
     color: white;
     text-align: center;
