@@ -1,78 +1,36 @@
-/* Common Template Starts */
+// Material para estudar sobre: (https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search#:~:text=Binary%20search%20is%20an%20efficient,game%20in%20the%20introductory%20tutorial.)
 
-process.stdin.resume();
-process.stdin.setEncoding("utf-8");
- 
-let inputString = "";
-let currentLine = 0;
- 
-process.stdin.on("data", (inputStdin) => {
-    inputString += inputStdin;
-});
- 
-process.stdin.on("end", (_) => {
-    inputString = inputString
-        .trim()
-        .split("\n")
-        .map((string) => {
-            return string.trim();
-        });
- 
-    main();
-});
- 
-function readline() {
-    return inputString[currentLine++];
-}
+function binarySearch(array, valor){
+    let min = 0;
+    let max = array.length;
 
-/* Common Template Ends */
+    while(min <= max){
+        chute = Math.floor((min + max)/2);
+        if(array[chute] == valor){
+            return chute;
+        } else if (array[chute] < valor){
 
-function main() {
-    const quantidade = Number(readline());
-    let bebidas = ['ABSINTH', 'BEER', 'BRANDY', 'CHAMPAGNE', 'GIN', 'RUM', 'SAKE', 'TEQUILA', 'VODKA', 'WHISKEY', 'WINE'];
+            // Como o chute é sempre na metade, e ele é superior a metade mínima, ent ele não se encontra lá.
+            min = chute + 1;
 
-    let contador = 0;
+        } else {
 
-    for(let i = 0; i < quantidade; i++){
-        let input = readline();
+            // Como o chute é sempre na metade, e ele é inferior a metade máxima, ent ele não se encontra lá.
+            max = chute - 1;
 
-        if(input[0].charCodeAt() < 65 && input < 18){
-            contador++;
-        } else{
-
-            let min = 0;
-            let max = bebidas.length - 1;
-            let chute;
-
-            while(min < max){
-                chute = Math.floor((min + max) / 2);
-
-                if(bebidas[chute] == input) {
-                    contador++;
-                    break;
-                } else if (bebidas[chute][0] < input[0]) {
-                    min = chute + 1;
-                } else if(bebidas[chute][0] > input[0]) {
-                    max = chute - 1;
-                } else {
-                    // Testar com os dois iguais
-
-                    if(input[0].charCodeAt() == 66){
-                        if(input == bebidas[1]){
-                            contador++;
-                        } else if (input == bebidas[2]) {
-                            contador++
-                        }
-                    } else {
-                        if(input == bebidas[9]){
-                            contador++;
-                        } else if (input == bebidas[10]){
-                            contador++
-                        }
-                    }
-                    break;
-                }
-            }
         }
     }
+
+    // Não encontrou valor
+    return -1;
+}
+
+function main() {
+    // A Binary Search tem a função de procurar um valor dentro de uma lista ordenada, sua complexidade é O(log(n)).
+    const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const valor = 9;
+
+    let resposta = binarySearch(array, valor);
+
+    console.log(resposta)
 }
