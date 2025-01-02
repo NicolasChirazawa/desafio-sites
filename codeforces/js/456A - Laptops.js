@@ -14,8 +14,6 @@ All ai are distinct. All bi are distinct.
 
 Output
 If Alex is correct, print "Happy Alex", otherwise print "Poor Alex" (without the quotes).
-
-/* Common Template Starts */
  
 /* Common Template Starts */
  
