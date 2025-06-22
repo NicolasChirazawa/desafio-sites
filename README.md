@@ -25,3 +25,11 @@ As soluções que desenvolvi estão sendo postadas juntas das data que foram tes
 • Primeiro problema 1000: 1A - [Theatre Square](https://codeforces.com/contest/1/problem/A) (12/2024);
 
 • Primeiro problema 1100: 25B - [Phone numbers](https://codeforces.com/contest/25/problem/B) (12/2024);
+
+• Primeiro problema 1200: 27A - [Next Test](https://codeforces.com/contest/27/problem/A) (03/2025);
+
+• Primeiro problema 1300: 41C - [Email Address](https://codeforces.com/contest/41/problem/C) (03/2025);
+
+• Primeiro problema 1400: 26B - [Regular Bracket Sequence](https://codeforces.com/contest/26/problem/B) (05/2025);
+
+• Primeiro problema 1500: 18A - [Triangle](https://codeforces.com/contest/18/problem/A) (06/2025);
