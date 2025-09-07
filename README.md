@@ -33,3 +33,5 @@ As soluções que desenvolvi estão sendo postadas juntas das data que foram tes
 • Primeiro problema 1400: 26B - [Regular Bracket Sequence](https://codeforces.com/contest/26/problem/B) (05/2025);
 
 • Primeiro problema 1500: 18A - [Triangle](https://codeforces.com/contest/18/problem/A) (06/2025);
+
+• Primeiro problema 1600: 1B - [Spreadsheets](https://codeforces.com/contest/1/problem/B) (09/2025);
