@@ -53,27 +53,25 @@ function readline() {
     return inputString[currentLine++];
 }
 /* Common Template Ends */
-
 function main() {
-    const number = String(readline());
-
-    const razao = 2;
-    let max_correct_numbers = 
-        (number.length > 1) ? 
-        (razao * (razao**(number.length - 2) - 1)) / (razao - 1) + 1 : 
-        0;
+    const inputs = readline().split(' ').map((element) => Number(element));
+    const stops = readline().split(' ').map((element) => Number(element));
+    const coordenate = readline().split(' ').map((element) => Number(element));
     
-    let skip_number = false;
-    for (let i = 0; i < number.length ; i++) {
-        if (number[i] > 1) {skip_number = true  }
+    let last_timing = Infinity;
+    let index_response;
 
-        if (i > 0 && 
-            (Number(number[i]) > 0 || skip_number)
-        ) {
-            max_correct_numbers += 2**(number.length - i - 1);
-        }
+    for (let i = stops.length - 1; i > 0; i--) {
+        const bus_timing = stops[i] / inputs[1];
+        const walk_timing = Math.sqrt((coordenate[0] - stops[i])**2 + (coordenate[1] - 0)**2) / inputs[2];
+
+        let response = bus_timing + walk_timing;
+        if (Number(response) < Number(last_timing)) { 
+            last_timing = Number(response);
+            index_response = i
+        } else {
+            return console.log(index_response + 1);
+        } 
     }
-    
-    max_correct_numbers += 1;
-    console.log(max_correct_numbers);
+    return console.log(2);
 }
